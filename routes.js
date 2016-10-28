@@ -26,7 +26,7 @@ router
     });
   })
   //search images
-  .get('/:search', (req, res, next) => {
+  .get('/search/:search', (req, res, next) => {
     //get db object
     let db = database.get();
     //search images from flikr
