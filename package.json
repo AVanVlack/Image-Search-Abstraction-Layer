@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon -r dotenv/config index.js"
   },
   "author": "Andrew VanVlack",
   "license": "MIT",
@@ -17,5 +18,8 @@
     "mongodb": "^2.2.11",
     "morgan": "^1.7.0",
     "shortid": "^2.2.6"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0"
   }
 }

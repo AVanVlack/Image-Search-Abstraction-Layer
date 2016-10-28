@@ -1,6 +1,6 @@
 # Image Search Abstraction Layer
 
-A simple microservice provides a list of images from imgur. It features pageation as well as search history. This is a simple backend practice project.
+A simple microservice provides a list of images from flickr. It features pageation as well as search history. This is a simple backend practice project.
 
 Running example on [heroku](https://vanvlack-imagesearch.herokuapp.com/).
 
