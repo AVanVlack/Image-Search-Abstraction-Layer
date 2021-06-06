@@ -4,17 +4,18 @@ const express = require('express'),
       db = require('./database');
 const router = require('./routes');
 
-//logging
+// logging and .env
 if(process.env.NODE_ENV === 'production'){
   app.use(morgan('combined'));
 }else{
   app.use(morgan('dev'));
+
 }
 
-//connect to database and start serving.
+// connect to database and start serving.
 db.connect(process.env.MONGODB_URI, function (err) {
     if (err) {
-        console.log('Unable to connect to ' + dbURI);
+        console.log('Unable to connect to database: ' + err);
         process.exit(1);
     } else {
         console.log('Connected to ' + process.env.MONGODB_URI);
@@ -25,10 +26,10 @@ db.connect(process.env.MONGODB_URI, function (err) {
     }
 });
 
-//router
+// router
 app.use('/', router);
 
-//error handler
+// error handler
 app.use(function errorHandler(err, req, res, next) {
   console.log(err);
   res.status(500).send({ error: err.message });
